@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+    <title>Entrenate ORT</title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -20,14 +20,18 @@
 
     <!-- your app's js -->
     <script src="js/app.js"></script>
+    <script src="js/controllers/pruebaController.js"></script>
+
   </head>
-  <body ng-app="starter">
+  <body ng-app="starter" ng-controller="pruebaController">
 
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title">{{funciona}}</h1>
       </ion-header-bar>
       <ion-content>
+        <button type="button" ng-click="llama()">Click Me!</button>
+        <h1 ng-repeat="x in myWelcome">{{x.name}}</h1>
       </ion-content>
     </ion-pane>
   </body>
