@@ -23,8 +23,11 @@ gulp.task('sass', function(done) {
     }))
     .pipe(rename({ extname: '.min.css' }))
     .pipe(gulp.dest('./www/css/'))
-    .on('end', done);
+    .on('end', done)
+    .pipe(plugins.livereload());
 });
+
+plugins.livereload.listen();
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);

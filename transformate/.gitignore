@@ -4,3 +4,12 @@
 node_modules/
 platforms/
 plugins/
+gulpfile.js
+.bowerrc
+.editorconfig
+.idea
+hooks
+resources
+scss
+www/lib/grunt-cli/
+www/lib/grunt/
