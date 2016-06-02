@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('transformateOrt', ['ionic'])
+angular.module('easyGetFit', ['ionic'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,3 +22,21 @@ angular.module('transformateOrt', ['ionic'])
     }
   });
 })
+
+  .config(function($stateProvider, $urlRouterProvider) {
+
+    $stateProvider
+      .state('home', {
+        url: '/home',
+        templateUrl: 'app/views/home/home.html'
+
+      })
+      .state('app', {
+        url: '/app',
+        templateUrl: 'app/views/layout/menu-layout.html'
+
+      });
+
+    $urlRouterProvider.otherwise("/app");
+
+  });

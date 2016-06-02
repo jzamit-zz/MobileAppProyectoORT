@@ -3,7 +3,7 @@
  */
 'use strict';
 
-angular.module('transformateOrt').controller('userController', function userController($scope, userService) {
+angular.module('easyGetFit').controller('userController', function userController($scope, userService) {
 
   //atributes
   $scope.page = {};
@@ -15,7 +15,7 @@ angular.module('transformateOrt').controller('userController', function userCont
   $scope.getUsers = function () {
 
     $scope.usuarios = userService.all().then(function (result) {
-      // $scope.projects = result.projectsDTO;
+
       $scope.usuarios = result.data;
       console.log($scope.usuarios);
 

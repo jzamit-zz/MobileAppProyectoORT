@@ -1,4 +1,4 @@
-angular.module('transformateOrt')
+angular.module('easyGetFit')
   .factory('userService', function userService($http) {
 
     return {

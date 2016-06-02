@@ -7,7 +7,7 @@
  */
 'use strict';
 
-angular.module('transformateOrt').controller('trainingController', function trainingController($scope, $http) {
+angular.module('easyGetFit').controller('trainingController', function trainingController($scope, $http) {
 
   //atributes
   $scope.page = {};
