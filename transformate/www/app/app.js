@@ -26,17 +26,63 @@ angular.module('easyGetFit', ['ionic'])
   .config(function($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('home', {
-        url: '/home',
-        templateUrl: 'app/views/home/home.html'
+      .state('training', {
+        abstract:true,
+        url: '/training',
+        templateUrl: 'app/views/training/training.html'
 
       })
+
+      .state('training.standard', {
+        url: '/standard',
+        templateUrl: 'app/views/training/training-standard.html'
+
+      })
+
+      /*
+      ejemplo tabs abajo
+       .state('training.standard', {
+       url: '/standard',
+       views: {
+       "tab-standard" : {
+       templateUrl: 'app/views/training/training-standard.html'
+       }
+
+       }
+       */
+
+      .state('training.custom', {
+        url: '/custom',
+        templateUrl: 'app/views/training/training-custom.html'
+
+      })
+     /*
+      .state('home', {
+        url: '/home',
+        templateUrl: 'app/views/layout/menu-layout.html'
+
+      })
+*/
       .state('app', {
+        abstract:true,
         url: '/app',
         templateUrl: 'app/views/layout/menu-layout.html'
 
-      });
+      })
 
-    $urlRouterProvider.otherwise("/app");
+      .state('app.home', {
+        url: '/home',
+        views:{
+           'mainContent':{
+            templateUrl: 'app/views/home/home.html'
+
+          }
+        }
+
+      })
+
+    ;
+
+    $urlRouterProvider.otherwise("/app/home");
 
   });
