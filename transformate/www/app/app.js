@@ -5,42 +5,49 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('easyGetFit', ['ionic'])
 
-.run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
-      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+  .run(function ($ionicPlatform) {
+    $ionicPlatform.ready(function () {
+      if (window.cordova && window.cordova.plugins.Keyboard) {
+        // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+        // for form inputs)
+        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
 
-      // Don't remove this line unless you know what you are doing. It stops the viewport
-      // from snapping when text inputs are focused. Ionic handles this internally for
-      // a much nicer keyboard experience.
-      cordova.plugins.Keyboard.disableScroll(true);
-    }
-    if(window.StatusBar) {
-      StatusBar.styleDefault();
-    }
-  });
-})
+        // Don't remove this line unless you know what you are doing. It stops the viewport
+        // from snapping when text inputs are focused. Ionic handles this internally for
+        // a much nicer keyboard experience.
+        cordova.plugins.Keyboard.disableScroll(true);
+      }
+      if (window.StatusBar) {
+        StatusBar.styleDefault();
+      }
+    });
+  })
 
-  .config(function($stateProvider, $urlRouterProvider) {
+  .config(function ($stateProvider, $urlRouterProvider) {
 
     $stateProvider
-      .state('training', {
-        abstract:true,
+      .state('app.training', {
         url: '/training',
-        templateUrl: 'app/views/training/training.html'
-
+        views: {
+          'mainContent': {
+            templateUrl: 'app/views/training/training.html'
+          }
+        }
       })
 
       .state('training.standard', {
         url: '/standard',
-        templateUrl: 'app/views/training/training-standard.html'
+        views: {
+          'mainContent': {
+            templateUrl: 'app/views/training/training-standard.html'
+
+          }
+        }
 
       })
 
       /*
-      ejemplo tabs abajo
+       ejemplo tabs abajo
        .state('training.standard', {
        url: '/standard',
        views: {
@@ -53,18 +60,23 @@ angular.module('easyGetFit', ['ionic'])
 
       .state('training.custom', {
         url: '/custom',
-        templateUrl: 'app/views/training/training-custom.html'
+        views: {
+          'mainContent': {
+            templateUrl: 'app/views/training/training-custom.html'
 
+          }
+        }
       })
-     /*
-      .state('home', {
-        url: '/home',
-        templateUrl: 'app/views/layout/menu-layout.html'
 
-      })
-*/
+      /*
+       .state('home', {
+       url: '/home',
+       templateUrl: 'app/views/layout/menu-layout.html'
+
+       })
+       */
       .state('app', {
-        abstract:true,
+        abstract: true,
         url: '/app',
         templateUrl: 'app/views/layout/menu-layout.html'
 
@@ -72,8 +84,8 @@ angular.module('easyGetFit', ['ionic'])
 
       .state('app.home', {
         url: '/home',
-        views:{
-           'mainContent':{
+        views: {
+          'mainContent': {
             templateUrl: 'app/views/home/home.html'
 
           }

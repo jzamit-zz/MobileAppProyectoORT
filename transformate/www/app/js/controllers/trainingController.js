@@ -7,7 +7,7 @@
  */
 'use strict';
 
-angular.module('easyGetFit').controller('trainingController', function trainingController($scope, $http) {
+angular.module('easyGetFit').controller('trainingController', function trainingController($scope) {
 
   //atributes
   $scope.page = {};
